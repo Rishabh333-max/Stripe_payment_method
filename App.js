@@ -2,14 +2,14 @@ import React,{Component} from "react";
 import { View,Text,StyleSheet, Alert,SafeAreaView } from "react-native";
 import { StripeProvider } from '@stripe/stripe-react-native';
 import PaymentScreen from "./src/PaymentScreen";
-import {PUBLISH_KEY} from '@env'
+// import {PUBLISH_KEY} from '@env'
 
 const App=()=>{
 
   return(
     <View style={styles.container}>
       <StripeProvider
-      publishableKey={PUBLISH_KEY}
+      publishableKey={process.env.PUBLISH_KEY}
       merchantIdentifier="merchant.identifier" 
       urlScheme="your-url-scheme"
     >

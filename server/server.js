@@ -1,6 +1,6 @@
-import {SECRET_KEY} from '@env'
+// import {SECRET_KEY} from '@env'
 
-const stripe = require('stripe')(SECRET_KEY);
+const stripe = require('stripe')(process.env.SECRET_KEY);
 const express = require('express')
 const bodyParser=require('body-parser')
 const app=express()
