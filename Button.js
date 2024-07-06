@@ -1,18 +1,29 @@
-import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import React from 'react';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
-const CommonButton=({
-    text='DONE',
-    onPress=()=>{},
-    disable=false
-})=>{
-return(
-    <TouchableOpacity disabled={disable} onPress={onPress} style={{height:40,marginHorizontal:20,backgroundColor:disable?'grey':"#D76540",borderRadius:10,
-        alignItems:"center",justifyContent:"center",marginVertical:20,
-    }}>
-<Text style={{fontWeight:"bold",color:"white",fontSize:16}}>{text}</Text>
+const CommonButton = ({text = 'DONE', onPress = () => {}, disable = false}) => {
+  return (
+    <TouchableOpacity disabled={disable} onPress={onPress} style={styles.touch}>
+      <Text style={styles.payText}>{text}</Text>
     </TouchableOpacity>
-)
-}
+  );
+};
 
-export default CommonButton
+const styles = StyleSheet.create({
+  touch: {
+    height: 40,
+    marginHorizontal: 20,
+    backgroundColor: disable ? 'grey' : '#D76540',
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: 20,
+  },
+  payText: {
+    fontWeight: 'bold',
+    color: 'white',
+    fontSize: 16,
+  },
+});
+
+export default CommonButton;
